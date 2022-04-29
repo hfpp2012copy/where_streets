@@ -20,11 +20,11 @@ Gem::Specification.new do |spec|
   }
 
   # Specify which files should be added to the gem when it is released.
-  spec.files = Dir.glob(%w[LICENSE README.md {exe,lib}/**/*]).reject { |f| File.directory?(f) }
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.files = Dir.glob(%w[LICENSE README.md pcas.json {lib}/**/*]).reject { |f| File.directory?(f) }
   spec.require_paths = ["lib"]
 
   spec.add_dependency "fast_blank", "~> 1.0.1"
+  spec.add_dependency "forwardable", "~> 1.3.2"
   spec.add_dependency "json", "~> 2.6.1"
+  spec.add_dependency "singleton", "~> 0.1.1"
 end

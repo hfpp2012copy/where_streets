@@ -1,3 +1,3 @@
-module WhereStreets
-  VERSION = "0.2.0".freeze
+class WhereStreets
+  VERSION = "0.3.0".freeze
 end

@@ -20,25 +20,25 @@ class WhereStreets
   end
 
   def find_cities(province)
-    handle_error do
-      return [] if province.blank?
+    return [] if province.blank?
 
+    handle_error do
       FILE[province.to_s].keys
     end
   end
 
   def find_counties(province, city)
-    handle_error do
-      return [] if province.blank? || city.blank?
+    return [] if [province, city].any? { |i| i.blank? }
 
+    handle_error do
       FILE[province.to_s][city.to_s].keys
     end
   end
 
   def find_towns(province, city, county)
-    handle_error do
-      return [] if province.blank? || city.blank? || county.blank?
+    return [] if [province, city, county].any? { |i| i.blank? }
 
+    handle_error do
       FILE[province.to_s][city.to_s][county.to_s]
     end
   end

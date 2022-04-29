@@ -14,6 +14,8 @@ class WhereStreetsTest < Minitest::Test
     assert_equal %w[广州市 韶关市 深圳市 珠海市 汕头市 佛山市 江门市 湛江市 茂名市 肇庆市 惠州市 梅州市 汕尾市 河源市 阳江市 清远市 东莞市 中山市 潮州市 揭阳市 云浮市],
                  WhereStreets.find_cities("广东省")
     assert_equal ["市辖区"], WhereStreets.find_cities("上海市")
+
+    assert_empty WhereStreets.find_cities("")
   end
 
   def test_counties
@@ -21,10 +23,13 @@ class WhereStreetsTest < Minitest::Test
                  WhereStreets.find_counties("广东省", "深圳市")
     assert_equal %w[黄浦区 徐汇区 长宁区 静安区 普陀区 虹口区 杨浦区 闵行区 宝山区 嘉定区 浦东新区 金山区 松江区 青浦区 奉贤区 崇明区],
                  WhereStreets.find_counties("上海市", "市辖区")
+    assert_empty WhereStreets.find_counties("", "")
+    # assert_empty WhereStreets.find_counties("广东省", "海丰市")
   end
 
   def test_towns
     assert_equal %w[梅陇镇 小漠镇 鹅埠镇 赤石镇 鮜门镇 联安镇 陶河镇 赤坑镇 大湖镇 可塘镇 黄羌镇 平东镇 海城镇 公平镇 附城镇 城东镇],
                  WhereStreets.find_towns("广东省", "汕尾市", "海丰县")
+    assert_empty WhereStreets.find_towns("", "", "")
   end
 end

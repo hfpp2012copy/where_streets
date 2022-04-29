@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = ""
   spec.homepage = "https://github.com/hfpp2012/where_streets"
-  spec.license = "MIT"
+  spec.license = "MPL"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata = {
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   }
 
   # Specify which files should be added to the gem when it is released.
-  spec.files = Dir.glob(%w[LICENSE.txt README.md {exe,lib}/**/*]).reject { |f| File.directory?(f) }
+  spec.files = Dir.glob(%w[LICENSE README.md {exe,lib}/**/*]).reject { |f| File.directory?(f) }
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]

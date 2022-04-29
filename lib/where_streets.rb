@@ -1,12 +1,12 @@
-require "json"
 require "singleton"
 require "forwardable"
 require "fast_blank"
+require "msgpack"
 
 class WhereStreets
   autoload :VERSION, "where_streets/version"
 
-  FILE = JSON.parse(File.read(File.expand_path("../pcas.json", __dir__))).freeze
+  FILE = MessagePack.unpack(File.read(File.expand_path("../pcas.mp", __dir__))).freeze
 
   include Singleton
 

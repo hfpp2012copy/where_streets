@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   }
 
   # Specify which files should be added to the gem when it is released.
-  spec.files = Dir.glob(%w[LICENSE README.md pcas.json {lib}/**/*]).reject { |f| File.directory?(f) }
+  spec.files = Dir.glob(%w[LICENSE README.md pcas.json pcas.mp {lib}/**/*]).reject { |f| File.directory?(f) }
   spec.require_paths = ["lib"]
 
   spec.add_dependency "fast_blank", "~> 1.0.1"

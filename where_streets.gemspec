@@ -27,5 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "forwardable", "~> 1.3.2"
   spec.add_dependency "json", "~> 2.6.1"
   spec.add_dependency "singleton", "~> 0.1.1"
-  spec.add_dependency "msgpack", "~> 1.5.1"
+  spec.add_dependency "msgpack", ">= 1.5.1", "< 1.8.0"
 end
